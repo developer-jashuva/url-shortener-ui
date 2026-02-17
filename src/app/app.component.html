@@ -50,5 +50,50 @@
     </div>
 
   </div>
+</div>
+<div class="container mt-4" *ngIf="history.length">
+
+  <div class="card p-3 shadow">
+
+    <h5 class="mb-3">Your Shortened URLs</h5>
+
+    <table class="table table-striped">
+
+      <thead>
+        <tr>
+          <th>Original URL</th>
+          <th>Short URL</th>
+          <th>Clicks</th>
+          <th>Created</th>
+          <th>Action</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of history">
+          <td>{{ item.originalUrl }}</td>
+          <td>
+            <a [href]="item.shortUrl" target="_blank">
+              {{ item.shortUrl }}
+            </a>
+          </td>
+          <td>{{ item.clickCount }}</td>
+          <td>{{ item.createdAt | date:'short' }}</td>
+          <td>
+  <button
+    class="btn btn-sm btn-danger"
+    (click)="delete(item)">
+    Delete
+  </button>
+</td>
+
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
 
 </div>
+
