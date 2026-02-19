@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 
 export class UrlService {
 
-  private apiUrl = 'http://localhost:5158/api/url/shorten';
+  private apiUrl = 'https://secureurlshortenerr.onrender.com/api/url/shorten';
 
   constructor(private http: HttpClient) {}
 
@@ -18,10 +18,10 @@ export class UrlService {
     return this.http.post(this.apiUrl, { originalUrl });
   }
 getAllUrls() {
-  return this.http.get<any[]>('http://localhost:5158/api/url/all');
+  return this.http.get<any[]>('https://secureurlshortenerr.onrender.com/api/url/all');
 }
 deleteUrl(code: string) {
-  return this.http.delete(`http://localhost:5158/api/url/${code}`);
+  return this.http.delete(`https://secureurlshortenerr.onrender.com/api/url/${code}`);
 }
 
 }
