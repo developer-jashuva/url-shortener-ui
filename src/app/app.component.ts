@@ -45,9 +45,7 @@ delete(item: any) {
 
 }
 
-    scrollToTool() {
-  document.getElementById('tool')?.scrollIntoView({ behavior: 'smooth' });
-}
+   
 
   shorten() {
     this.shortUrl = '';
